@@ -10,9 +10,11 @@
 import java.util.Scanner;
 
 public class App {
-    public static void main(String[] args) {
-        SimpleCalculator calculator = new SimpleCalculator();
-        Scanner inScanner = new Scanner(System.in);
+
+    SimpleCalculator calculator = new SimpleCalculator();
+    Scanner inScanner = new Scanner(System.in);
+
+    public void calculate() {
 
         int menuSelection = 0;
         double first = 0;
@@ -23,7 +25,7 @@ public class App {
 
         System.out.println("Welcome to Simple Calculator.");
 
-        do {
+        while (doAgain) {
             System.out.println("Please select an option.");
             System.out.println("1. Add");
             System.out.println("2. Subtract");
@@ -36,7 +38,7 @@ public class App {
             if (menuSelection < 1 || menuSelection > 5)
             {
                 System.out.println("Error: bad input.");
-                //continue;
+                continue;
             }
 
             // check for quit condition
@@ -78,6 +80,8 @@ public class App {
                     break;
             }
 
-        } while (doAgain);
+        }
+
     }
+
 }
